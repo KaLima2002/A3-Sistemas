@@ -1,0 +1,99 @@
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: 'Times New Roman';
+  }
+  
+  a {
+    font-family: 'Times New Roman';
+    /* Outros estilos para os links */
+  }
+  
+  header {
+    background-color: #006600;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .logo a {
+    color: #fff;
+    font-size: 40px;
+    text-decoration: none;
+    margin-right: auto; /* Move para a esquerda */
+  }
+  
+  .icons {
+    display: flex;
+    align-items: center;
+  }
+  
+  .icons a {
+    color: #fff;
+    font-size: 25px;
+    margin-left: -15px; /* Espaçamento entre os ícones */
+    text-decoration: none;
+  }
+    
+  nav {
+    background-color: white;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #000;
+    position: sticky;
+    top: 80px;
+    z-index: 100;
+  }
+    
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    margin-right: auto;
+  }
+    
+  li {
+    margin: 0;
+    padding: 0;
+    line-height: 50px;
+  }
+    
+  a {
+    display: block;
+    font-family: 'Times New Roman';
+    font-size: 25px;
+    color: #000;
+    text-decoration: none;
+    padding: 0 20px;
+  }
+    
+  a:hover {
+    background-color: #3e8e41;
+  }
+  
+  /* CSS personalizado para o resultado GET */
+  #resultado {
+    margin-top: 30px;
+    list-style: none;
+    padding: 0;
+  }
+  
+  .item {
+    margin-bottom: 10px;
+    font-size: 20px;
+    display: inline-block;
+  }
+  
+  #total {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+  }

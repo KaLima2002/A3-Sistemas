@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resultado GET</title>
+  <style>
+    /* CSS da primeira página */
+    body {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      font-family: 'Times New Roman';
+    }
+
+    a {
+      font-family: 'Times New Roman';
+      /* Outros estilos para os links */
+    }
+
+    header {
+      background-color: #006600;
+      height: 80px;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo a {
+      color: #fff;
+      font-size: 40px;
+      text-decoration: none;
+      margin-right: auto; /* Move para a esquerda */
+    }
+
+    .icons {
+      display: flex;
+      align-items: center;
+    }
+
+    .icons a {
+      color: #fff;
+      font-size: 25px;
+      margin-left: -15px; /* Espaçamento entre os ícones */
+      text-decoration: none;
+    }
+
+    nav {
+      background-color: white;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid #000;
+      position: sticky;
+      top: 80px;
+      z-index: 100;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      margin-right: auto;
+    }
+
+    li {
+      margin: 0;
+      padding: 0;
+      line-height: 50px;
+    }
+
+    a {
+      display: block;
+      font-family: 'Times New Roman';
+      font-size: 25px;
+      color: #000;
+      text-decoration: none;
+      padding: 0 20px;
+    }
+
+    a:hover {
+      background-color: #3e8e41;
+    }
+
+    /* CSS personalizado para o resultado GET */
+    #resultado {
+      margin-top: 30px;
+      list-style: none;
+      padding: 0;
+    }
+
+    #resultado li {
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    #total {
+      margin-top: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .item {
+      margin-bottom: 10px;}
+    
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <h1><a href="/Escolher-ListaDeCompras">EcoFoodTech</a></h1>
+    </div>
+    <div class="icons">
+      <a href="/Mostrar-ListaDeCompras">🛒 Itens selecionados</a>
+    </div>
+  </header>
+  <h1>EcoFoodTech</h1>
+  <ul id="resultado"></ul>
+  <p id="total"></p>
+
+  <script>
+    async function mostrarResultadoGET() {
+      const response = await fetch('/produto');
+      const resultado = await response.json();
+
+      const listaResultado = document.getElementById('resultado');
+      listaResultado.innerHTML = '';
+
+      let total = 0;
+
+      resultado.forEach((item) => {
+        const precoString = item.preco.replace('Preço: R$', '');
+        const preco = parseFloat(precoString);
+        const quantidade = parseInt(item.quantidade);
+
+        const itemDiv = document.createElement('div');
+        itemDiv.classList.add('item');
+
+        const listItem = document.createElement('li');
+        const precoFormatado = `R$ ${preco.toFixed(2).replace('.', ',')}`;
+        listItem.textContent = `${item.nome} Preço: ${precoFormatado} Quantidade: ${quantidade}`;
+
+        itemDiv.appendChild(listItem);
+        listaResultado.appendChild(itemDiv);
+
+        total += preco * quantidade;
+      });
+
+      const totalItem = document.createElement('li');
+      const totalFormatado = `R$ ${total.toFixed(2).replace('.', ',')}`;
+      totalItem.textContent = `Total: ${totalFormatado}`;
+      listaResultado.appendChild(totalItem);
+    }
+
+    mostrarResultadoGET();
+  </script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: 'Times New Roman';
+  }
+  
+  a {
+    font-family: 'Times New Roman';
+    /* Outros estilos para os links */
+  }
+  
+  header {
+    background-color: #006600;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .logo a {
+    color: #fff;
+    font-size: 40px;
+    text-decoration: none;
+    margin-right: auto; /* Move para a esquerda */
+  }
+  
+  .icons {
+    display: flex;
+    align-items: center;
+  }
+  
+  .icons a {
+    color: #fff;
+    font-size: 25px;
+    margin-left: -15px; /* Espaçamento entre os ícones */
+    text-decoration: none;
+  }
+    
+  nav {
+    background-color: white;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #000;
+    position: sticky;
+    top: 80px;
+    z-index: 100;
+  }
+    
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      margin-right: auto;
+    }
+    
+    li {
+      margin: 0;
+      padding: 0;
+      line-height: 50px;
+    }
+    
+    a {
+      display: block;
+      font-family: 'Times New Roman';
+      font-size: 25px;
+      color: #000;
+      text-decoration: none;
+      padding: 0 20px;
+    }
+    
+    a:hover {
+      background-color: #3e8e41;
+    }
+ 
+      #pc {
+        font-size: 30px;
+        text-align: left;
+        margin-left: 15px;
+        font-weight: bold;
+      }
+  
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .card {
+    width: 300px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  
+
+  
+  h2 {
+    margin-bottom: 5px;
+    text-align: center;
+  }
+  
+  p {
+    margin-top: 10;
+    text-align: left;
+  }
+  
+  button {
+    margin-top: 10px;
+    
+  }
+
+  .Quantidade{
+    padding: 3px 65px;
+    text-align: center;
+
+  }
+
+  .quantity{
+    text-align: left;
+
+  }
+  
+  .Adicionar{
+    margin: 10 50px;
+    padding: 5px 100px;
+    font-size: 14px;
+    border-radius: 4px;
+    background-color: #eee;
+    border: none;
+  }
