@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lembretes</title>
+</head>
+<body>
+  <h1>Lembretes</h1>
+  <ul id="lembretes"></ul>
+
+  <script>
+    async function mostrarLembretes() {
+      const response = await fetch('/lembretes');
+      const lembretes = await response.json();
+
+      const listaLembretes = document.getElementById('lembretes');
+      listaLembretes.innerHTML = '';
+
+      lembretes.forEach((lembrete) => {
+        const itemLista = document.createElement('li');
+        itemLista.textContent = `${lembrete.nome}: ${lembrete.descricao}`;
+        listaLembretes.appendChild(itemLista);
+      });
+    }
+
+    mostrarLembretes();
+  </script>
+</body>
+</html>
